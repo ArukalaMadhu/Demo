@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="RanorexReport.xsl"?>
+<log title="Ranorex Test Report" rxversion="5.2.0.20272" osversion="Windows 7 Service Pack 1 32bit" runtimeversion="4.0.30319.18052" procarch="32bit">
+<message time="2014/11/27 11:48:48.942" level="INFO" category="System Summary" style="">
+<![CDATA[Host: SYS0013]]><br/>
+<![CDATA[Ranorex version: 5.2.0.20272]]><br/>
+<![CDATA[OS version: Windows 7 Service Pack 1 32bit]]><br/>
+<![CDATA[OS default locale: en-US]]><br/>
+<![CDATA[.NET Runtime version: 4.0.30319.18052]]><br/>
+<![CDATA[Number of logical CPUs: 2]]><br/>
+<![CDATA[Number of displays: 1]]><br/>
+<![CDATA[Screen dimension: 1440x900]]><br/>
+<![CDATA[Memory: 72% load, phy 817 MiB free/2986 MiB total, virt 1722 MiB free/2047 MiB total.]]><br/>
+</message>
+<message time="2014/11/27 11:48:48.976" level="INFO" category="User" style="">
+<div><b><u>ICGSearchTest_ViewQuoteDetails</u></b> - Chrome</div></message>
+<message time="2014/11/27 11:48:50.227" level="INFO" category="User" style="">
+<i>Started 'Login' Operation</i></message>
+<message time="2014/11/27 11:48:51.338" level="SUCCESS" category="User" style="">
+<![CDATA[Entered andyl under 'Username Field' in 'Login' page]]><br/>
+</message>
+<message time="2014/11/27 11:48:53.539" level="SUCCESS" category="User" style="">
+<![CDATA[Entered t200ny under 'Password Field' in 'Login' Page]]><br/>
+</message>
+<message time="2014/11/27 11:48:55.749" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Login' Button in 'Login' Page]]><br/>
+</message>
+<message time="2014/11/27 11:48:58.132" level="INFO" category="User" style="">
+<i>Navigating to 'Quotes and Policies' section</i></message>
+<message time="2014/11/27 11:49:01.665" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Quotes and Policies' link in 'Home' page]]><br/>
+</message>
+<message time="2014/11/27 11:49:02.756" level="INFO" category="User" style="">
+<i>Searching quote with id <b>415766</b></i></message>
+<message time="2014/11/27 11:49:31.529" level="SUCCESS" category="User" style="">
+<![CDATA[Selected 'Quotes' under 'Quotes and policies' drop down]]><br/>
+</message>
+<message time="2014/11/27 11:49:36.260" level="SUCCESS" category="User" style="">
+<![CDATA[Entered Search Field under 415766]]><br/>
+</message>
+<message time="2014/11/27 11:50:43.037" level="INFO" category="User" style="">
+<i>Verifying search results</i></message>
+<message time="2014/11/27 11:50:44.821" level="FAILURE" category="User" style="">
+<![CDATA[Search result does not contain specified record]]><br/>
+</message>
+<message time="2014/11/27 11:50:44.977" level="INFO" category="Screenshot" style="">
+<a href=".\ICGSearchTest_ViewQuoteDetails_1_rxlog.jpg"><img src=".\ICGSearchTest_ViewQuoteDetails_1_rxlog_thumb.jpg" alt="Screenshot"/></a>
+</message>
+<message time="2014/11/27 11:50:45.037" level="INFO" category="User" style="">
+<i>Signing out</i></message>
+<message time="2014/11/27 11:50:46.374" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on sign out link]]><br/>
+</message>
+<message time="2014/11/27 11:50:48.487" level="SUCCESS" category="User" style="">
+<![CDATA[Sign out successful]]><br/>
+</message>
+</log>

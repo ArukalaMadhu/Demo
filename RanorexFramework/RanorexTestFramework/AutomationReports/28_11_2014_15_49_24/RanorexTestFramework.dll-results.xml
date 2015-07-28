@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\build\RanorexTestFramework.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-11-28" time="15:51:33">
+  <environment nunit-version="2.6.0.12051" clr-version="4.0.30319.18052" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework" machine-name="SYS0013" user="Admin" user-domain="SYS0013" />
+  <culture-info current-culture="en-IN" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\build\RanorexTestFramework.dll" executed="True" result="Success" success="True" time="125.775" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="RanorexTestFramework" executed="True" result="Success" success="True" time="125.768" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Testsuite" executed="True" result="Success" success="True" time="125.767" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="ICGtest" executed="True" result="Success" success="True" time="125.764" asserts="0">
+                <results>
+                  <test-case name="RanorexTestFramework.Testsuite.ICGtest.ICG002" executed="True" result="Success" success="True" time="125.734" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

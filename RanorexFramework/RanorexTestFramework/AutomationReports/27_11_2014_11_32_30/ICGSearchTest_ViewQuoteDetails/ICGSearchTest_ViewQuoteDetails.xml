@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="RanorexReport.xsl"?>
+<log title="Ranorex Test Report" rxversion="5.2.0.20272" osversion="Windows 7 Service Pack 1 32bit" runtimeversion="4.0.30319.18052" procarch="32bit">
+<message time="2014/11/27 11:33:06.307" level="INFO" category="System Summary" style="">
+<![CDATA[Host: SYS0013]]><br/>
+<![CDATA[Ranorex version: 5.2.0.20272]]><br/>
+<![CDATA[OS version: Windows 7 Service Pack 1 32bit]]><br/>
+<![CDATA[OS default locale: en-US]]><br/>
+<![CDATA[.NET Runtime version: 4.0.30319.18052]]><br/>
+<![CDATA[Number of logical CPUs: 2]]><br/>
+<![CDATA[Number of displays: 1]]><br/>
+<![CDATA[Screen dimension: 1440x900]]><br/>
+<![CDATA[Memory: 84% load, phy 471 MiB free/2986 MiB total, virt 1723 MiB free/2047 MiB total.]]><br/>
+</message>
+<message time="2014/11/27 11:33:06.355" level="INFO" category="User" style="">
+<div><b><u>ICGSearchTest_ViewQuoteDetails</u></b> - Chrome</div></message>
+<message time="2014/11/27 11:33:07.738" level="INFO" category="User" style="">
+<i>Started 'Login' Operation</i></message>
+<message time="2014/11/27 11:33:08.959" level="SUCCESS" category="User" style="">
+<![CDATA[Entered andyl under 'Username Field' in 'Login' page]]><br/>
+</message>
+<message time="2014/11/27 11:33:11.299" level="SUCCESS" category="User" style="">
+<![CDATA[Entered t200ny under 'Password Field' in 'Login' Page]]><br/>
+</message>
+<message time="2014/11/27 11:33:13.621" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Login' Button in 'Login' Page]]><br/>
+</message>
+<message time="2014/11/27 11:33:15.976" level="INFO" category="User" style="">
+<i>Navigating to 'Quotes and Policies' section</i></message>
+<message time="2014/11/27 11:33:18.225" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Quotes and Policies' link in 'Home' page]]><br/>
+</message>
+<message time="2014/11/27 11:33:19.298" level="INFO" category="User" style="">
+<i>Signing out</i></message>
+<message time="2014/11/27 11:33:20.610" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on sign out link]]><br/>
+</message>
+<message time="2014/11/27 11:33:21.863" level="SUCCESS" category="User" style="">
+<![CDATA[Sign out successful]]><br/>
+</message>
+</log>

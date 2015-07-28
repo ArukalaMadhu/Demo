@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="RanorexReport.xsl"?>
+<log title="Ranorex Test Report" rxversion="5.2.0.20272" osversion="Windows 7 Service Pack 1 32bit" runtimeversion="4.0.30319.18052" procarch="32bit">
+<message time="2014/12/01 16:35:48.610" level="INFO" category="System Summary" style="">
+<![CDATA[Host: SYS0013]]><br/>
+<![CDATA[Ranorex version: 5.2.0.20272]]><br/>
+<![CDATA[OS version: Windows 7 Service Pack 1 32bit]]><br/>
+<![CDATA[OS default locale: en-US]]><br/>
+<![CDATA[.NET Runtime version: 4.0.30319.18052]]><br/>
+<![CDATA[Number of logical CPUs: 2]]><br/>
+<![CDATA[Number of displays: 1]]><br/>
+<![CDATA[Screen dimension: 1440x900]]><br/>
+<![CDATA[Memory: 77% load, phy 682 MiB free/2986 MiB total, virt 1725 MiB free/2047 MiB total.]]><br/>
+</message>
+<message time="2014/12/01 16:35:48.662" level="INFO" category="User" style="">
+<div><b><u>ICG002</u></b> - Chrome</div></message>
+<message time="2014/12/01 16:35:50.118" level="INFO" category="User" style="">
+<i>Started 'Login' Operation</i></message>
+<message time="2014/12/01 16:35:51.373" level="SUCCESS" category="User" style="">
+<![CDATA[Entered andyl under 'Username Field' in 'Login' page]]><br/>
+</message>
+<message time="2014/12/01 16:35:53.663" level="SUCCESS" category="User" style="">
+<![CDATA[Entered t200ny under 'Password Field' in 'Login' Page]]><br/>
+</message>
+<message time="2014/12/01 16:35:56.003" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Login' Button in 'Login' Page]]><br/>
+</message>
+<message time="2014/12/01 16:35:58.471" level="INFO" category="User" style="">
+<i>Creating New Quote</i></message>
+<message time="2014/12/01 16:36:04.688" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'New Quote' button in 'Home' page]]><br/>
+</message>
+<message time="2014/12/01 16:37:23.028" level="SUCCESS" category="User" style="">
+<![CDATA[--------------->2]]><br/>
+</message>
+<message time="2014/12/01 16:37:24.063" level="SUCCESS" category="User" style="">
+<![CDATA[Selected 'Occidental Fire and Casualty Co of NC' under Policy carrier dropdown]]><br/>
+</message>
+<message time="2014/12/01 16:37:33.864" level="SUCCESS" category="User" style="">
+<![CDATA[--------------->2]]><br/>
+</message>
+<message time="2014/12/01 16:37:35.104" level="FAILURE" category="User" style="">
+<![CDATA['HO3 AK1' option is not existing in dropdown list]]><br/>
+</message>
+<message time="2014/12/01 16:37:35.276" level="INFO" category="Screenshot" style="">
+<a href=".\ICG002_1_rxlog.jpg"><img src=".\ICG002_1_rxlog_thumb.jpg" alt="Screenshot"/></a>
+</message>
+<message time="2014/12/01 16:37:35.329" level="INFO" category="User" style="">
+<i>Signing out</i></message>
+<message time="2014/12/01 16:37:36.667" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on sign out link]]><br/>
+</message>
+<message time="2014/12/01 16:37:38.937" level="SUCCESS" category="User" style="">
+<![CDATA[Sign out successful]]><br/>
+</message>
+</log>

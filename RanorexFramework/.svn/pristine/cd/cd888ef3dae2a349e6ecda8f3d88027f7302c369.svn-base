@@ -1,0 +1,264 @@
+﻿/*
+ * Created by SharpDevelop.
+ * User: Vijay
+ * Date: 6/12/2014
+ * Time: 1:32 PM
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Drawing;
+using System.IO;
+using System.Threading;
+using System.Windows.Forms;
+
+using NUnit.Framework;
+using Ranorex;
+using RanorexTestFramework.PageConstants;
+using RanorexTestFramework.utilities;
+
+namespace RanorexTestFramework.PageParts
+{
+	/// <summary>
+	/// contains all the operations under wuotes and policies tab
+	/// </summary>
+	public class ICGQuotesandPoliciesPage : SafeActions
+	{
+		WebDocument webdoc;
+		//Objects for required page elements
+		ICGQuotesandPoliciesPage_Elements searcharea;
+		ICGQuoteArea_Elements quotearea;
+		ICGApplicationArea_Elements applicationarea;
+		ICGLoginPage_Elements loginpageobj;
+		/// <summary>
+		/// contructor to grab current webdocument reference and pass it over to safeactions
+		/// </summary>
+		/// <param name="webdocument">Current webdocument reference</param>
+		public ICGQuotesandPoliciesPage(WebDocument webdocument): base(webdocument)
+		{
+			webdoc = webdocument;
+			searcharea=new ICGQuotesandPoliciesPage_Elements(webdocument);
+			quotearea=new ICGQuoteArea_Elements(webdocument);
+			applicationarea=new ICGApplicationArea_Elements(webdocument);
+			loginpageobj=new ICGLoginPage_Elements(webdocument);
+		}
+		/// <summary>
+		/// Select quotes from drop down and search based on given text
+		/// </summary>
+		/// <param name="_searchtext">Text to search -will be passed from test</param>
+		public void searchQuotes(String _search_quote_id)
+		{
+			Report.LogHtml(ReportLevel.Info,"<i>Searching quote with id <b>"+_search_quote_id+"</b></i>");
+			
+			//Wait until search loading popup disappeares
+			safeVerifyElementNotVisible(searcharea._searchpopup,"Search loading pop up",30000);
+			safeVerifyElementVisible(searcharea._transactionhistory_tab,"Transaction tab under search area",40000);
+			//Selecting Quotes under Quotes and policies drop down
+			safeSelectoption(searcharea._quotesandpoliciesdropdown,"'Quotes and policies' drop down", "Quotes",30000);
+			
+			safeVerifyElementNotVisible(searcharea._searchpopup,"Search loading pop up",30000);
+			//Entering text under Search field
+			
+			safeType(searcharea._search_box,"Search Field", _search_quote_id,30000);
+			safeVerifyElementNotVisible(searcharea._searchpopup,"Search loading pop up",30000);
+			//Verifying the results
+			if(!verifySearchResults(_search_quote_id))
+			{
+				Report.Failure("Search result does not contain specified record") ;
+				Report.Screenshot();
+				Assert.Fail("Search result does not contain specified record");
+			}else{
+				Report.Success("Search result contains specified record");
+			}
+			
+		}
+		/// <summary>
+		/// Opens the first quote in the table
+		/// </summary>
+		/// <returns></returns>
+		private String openFirstQuote()
+		{
+			
+			Report.LogHtml(ReportLevel.Info,"<i>Opening specified quote</i>");
+			safeVerifyElementVisible(searcharea._FirstResult,"First Result in table",30000);
+			String quoteidentifier=safegetAttribute(searcharea._testcell,"First cell in first record","text",10000);
+			//Opening the Quote
+			safeDoubleClick(searcharea._testcell,"First Record in the Search results",20000);
+			
+			return quoteidentifier;
+		}
+		/// <summary>
+		/// Verifying search results
+		/// </summary>
+		/// <param name="texttosearch">Search string to be verified in each record under Search results</param>
+		/// <returns>true if all the record matched given string</returns>
+		public Boolean verifySearchResults(String texttosearch)
+		{
+			Report.LogHtml(ReportLevel.Info,"<i>Verifying search results</i>");
+			
+			Table tb=waitandfindelement(searcharea._search_table,"Search resutls table",30000);
+			IList<Row> rows=tb.Rows;
+			IList<Column> cols=tb.Columns;
+			String s="";
+			int count=0;
+			for(int i=0;i<rows.Count;i++)
+			{
+				count=0;
+				IList<Cell> cells=rows[i].Cells;
+				foreach(var ele in cells)
+				{ if(ele.Text.ToString().ToLower().Contains(texttosearch.ToLower()))
+					{
+						count=1;
+					}
+				}
+				
+				
+			}
+			if(count!=1)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		/// <summary>
+		/// Verifies whether correct quote has been opened by its id
+		/// </summary>
+		public void verifyOpenedQuote()
+		{
+			//opening the quote in the results
+			String id=openFirstQuote();
+			safeVerifyElementVisible(searcharea._quotehead,"Opened Quote tab header",30000);
+			String identifier=safegetAttribute(searcharea._Quoteid,"Quote Id under quote tab header","text", 20000);
+			
+			verifyData(identifier,id,"Verify opened quote id");
+			
+			//Switching to quote area if it is not displayed by default
+			switchToQuoteArea();
+			
+		}
+		/// <summary>
+		/// switch to quote area if landed under other tabs
+		/// </summary>
+		public void switchToQuoteArea()
+		{
+			
+			safeVerifyElementVisible(searcharea._saveandclose_button,"Save and close button", 40000);
+			safeVerifyElementVisible(searcharea._premiumrate,"Premium Rate banner", 40000);
+			if(safegetAttribute(searcharea._activetab,"Active tab in navigation bar", "text",30000).ToLower()!="quote")
+			{
+				Report.LogHtml(ReportLevel.Info,"<i>Switching to quote area</i>");
+				for (;safegetAttribute(searcharea._activetab,"Active tab in navigation bar", "text",30000).ToLower()!="quote";)
+				{
+					
+					safeClick(searcharea._previous_button,"'previous' button",20000);
+					safeVerifyElementVisible(searcharea._saveandclose_button,"Save and close button", 40000);
+					if(safegetAttribute(searcharea._activetab,"Active tab in navigation bar", "text",30000).ToLower()=="review")
+					{
+						safeClick(searcharea._previous_button,"'previous' button",20000);
+						safeClick(searcharea._unlockbutton,"'Unlock' button under 'review' pop up",5000);
+					}
+					
+				}
+			}
+			
+			
+		}
+		/// <summary>
+		/// Varifies information under quote area
+		/// </summary>
+		/// <param name="firstname">takes the first name</param>
+		/// <param name="lastname">takes the last name</param>
+		/// <param name="streetname">takes the street name</param>
+		/// <param name="zipcode">take the zip code</param>
+		public void viewQuoteDetails(String firstname,String lastname,String streetname="",int zipcode=0)
+		{
+			Report.LogHtml(ReportLevel.Info,"<i>Verifying 'Quote' area details</i>");
+			verifyData(safegetAttribute(quotearea._First_name,"'First name' field in 'Quote' area","text",20000).ToLower(),firstname.ToLower(),"Verify 'First name' filed value in 'Quote' area");
+			verifyData(safegetAttribute(quotearea._Last_name,"'Last Name' field in 'Quote' area","text",20000).ToLower(),lastname.ToLower(),"Verify 'Last name' field value in 'Quote' area");
+			verifyData(safegetAttribute(quotearea._Street_name,"'Street Name' field in 'Quote' area","text",20000).ToLower(),streetname.ToLower(),"Verify 'Street name' field value in 'Quote' area");
+			verifyData(safegetAttribute(quotearea._zip_code,"'Zip Code' field in 'Quote' area","text",20000),zipcode.ToString(),"Verify 'Zip code' field value in 'Quote' area");
+			
+			safeClick(searcharea._next_button,"'Next' button in 'Quote' area", 2000);
+			
+		}
+		/// <summary>
+		/// verifying application area details
+		/// </summary>
+		/// <param name="residendetrust">takes residence trust option</param>
+		/// <param name="maritalstatus">takes maritalstatud option</param>
+		public void viewApplicationDetails(String residendetrust,String maritalstatus)
+		{
+			Report.LogHtml(ReportLevel.Info,"<i>Verifying 'Application' area details</i>");
+			safeVerifyElementVisible(searcharea._saveandclose_button,"'save and close' button",40000);
+			
+			verifyData(safegetAttribute(applicationarea._No_radiobutton,"'Residence trust' radio button in 'Application' area","text",20000).ToLower(),residendetrust.ToLower(),"Verify 'Residence trust' setting in 'Application' area");
+			
+			verifyData(safegetAttribute(applicationarea._married_radiobutton,"'Marriage' radio button in 'Applicaiton' area","text",20000).ToLower(),maritalstatus.ToLower(),"Verify 'Marital status' setting in 'Application' area");
+			
+			safeClick(searcharea._next_button,"'Next' button in 'Application' area", 2000);
+		}
+		/// <summary>
+		/// Close the quote after success banner displayed
+		/// </summary>
+		public void reviewAndSubmit()
+		{
+			Report.LogHtml(ReportLevel.Info,"<i>Closing quote</i>");
+			safeVerifyElementVisible(searcharea._saveandclose_button,"'save and close' button",40000);
+			safeClick(applicationarea._startreview_button,"'Start Review' button under 'review' pop up",3000);
+			try
+			{
+				Validate.IsTrue(safeVerifyElementVisible(applicationarea._review_banner,"Success banner under submit tab",40000),"Review Banner verification");
+			}
+			catch(ValidationException val)
+			{
+				Report.Screenshot();
+				
+				Assert.Fail("Review Success banner not shown");
+			}
+			
+			safeClick(searcharea._saveandclose_button,"save and Close button",40000);
+			
+		}
+		/// <summary>
+		/// Signing out from the applicaiton
+		/// </summary>
+		public void signOut()
+		{
+			Report.LogHtml(ReportLevel.Info,"<i>Signing out</i>");
+			safeClick(searcharea._sign_out,"sign out link",30000);
+			if(!safeVerifyElementVisible(loginpageobj._username_text,"Username under login page",30000))
+			{
+				Report.Failure("User name field under login page not displayed after waiting for 30 sec");
+				Report.Screenshot();
+				Assert.Fail("User Name field under login page is not displayed after waiting for 30 sec");				
+				
+			}
+			else
+			{
+				Report.Success("Sign out successful");
+			}
+			
+			
+		}
+		private void verifyData(String actual,String expected,String customreportString)
+		{
+			try
+			{
+				Validate.AreEqual(actual,expected,customreportString+"[actual = "+actual+", expected = "+expected+"]");
+			}catch(ValidationException val)
+			{
+				Report.Screenshot();
+				Assert.Fail(customreportString+"--Failed\n[actual = "+actual+", expected = "+expected+"]");
+			}
+			
+			
+			
+		}
+		
+	}
+}

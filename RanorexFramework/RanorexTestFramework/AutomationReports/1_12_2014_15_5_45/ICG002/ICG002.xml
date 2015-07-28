@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="RanorexReport.xsl"?>
+<log title="Ranorex Test Report" rxversion="5.2.0.20272" osversion="Windows 7 Service Pack 1 32bit" runtimeversion="4.0.30319.18052" procarch="32bit">
+<message time="2014/12/01 15:07:52.271" level="INFO" category="System Summary" style="">
+<![CDATA[Host: SYS0013]]><br/>
+<![CDATA[Ranorex version: 5.2.0.20272]]><br/>
+<![CDATA[OS version: Windows 7 Service Pack 1 32bit]]><br/>
+<![CDATA[OS default locale: en-US]]><br/>
+<![CDATA[.NET Runtime version: 4.0.30319.18052]]><br/>
+<![CDATA[Number of logical CPUs: 2]]><br/>
+<![CDATA[Number of displays: 1]]><br/>
+<![CDATA[Screen dimension: 1440x900]]><br/>
+<![CDATA[Memory: 71% load, phy 863 MiB free/2986 MiB total, virt 1725 MiB free/2047 MiB total.]]><br/>
+</message>
+<message time="2014/12/01 15:07:52.347" level="INFO" category="User" style="">
+<div><b><u>ICG002</u></b> - Chrome</div></message>
+<message time="2014/12/01 15:07:53.296" level="INFO" category="User" style="">
+<i>Started 'Login' Operation</i></message>
+<message time="2014/12/01 15:07:55.473" level="SUCCESS" category="User" style="">
+<![CDATA[Entered andyl under 'Username Field' in 'Login' page]]><br/>
+</message>
+<message time="2014/12/01 15:07:57.757" level="SUCCESS" category="User" style="">
+<![CDATA[Entered t200ny under 'Password Field' in 'Login' Page]]><br/>
+</message>
+<message time="2014/12/01 15:08:00.083" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Login' Button in 'Login' Page]]><br/>
+</message>
+<message time="2014/12/01 15:08:02.566" level="INFO" category="User" style="">
+<i>Creating New Quote</i></message>
+<message time="2014/12/01 15:08:09.771" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'New Quote' button in 'Home' page]]><br/>
+</message>
+<message time="2014/12/01 15:09:11.654" level="SUCCESS" category="User" style="">
+<![CDATA[--------------->0]]><br/>
+</message>
+<message time="2014/12/01 15:09:11.822" level="SUCCESS" category="User" style="">
+<![CDATA[============>Acceptance Casualty Insurance Company]]><br/>
+</message>
+<message time="2014/12/01 15:09:11.976" level="SUCCESS" category="User" style="">
+<![CDATA[============>SageSure AL Surplus Lines]]><br/>
+</message>
+<message time="2014/12/01 15:09:12.126" level="SUCCESS" category="User" style="">
+<![CDATA[============>SageSure LA Surplus Lines]]><br/>
+</message>
+<message time="2014/12/01 15:09:12.288" level="SUCCESS" category="User" style="">
+<![CDATA[============>SageSure NJ Surplus Lines]]><br/>
+</message>
+<message time="2014/12/01 15:09:12.441" level="SUCCESS" category="User" style="">
+<![CDATA[============>SageSure TX Surplus Lines]]><br/>
+</message>
+<message time="2014/12/01 15:09:12.593" level="SUCCESS" category="User" style="">
+<![CDATA[============>Federated National Insurance Company]]><br/>
+</message>
+<message time="2014/12/01 15:09:12.759" level="SUCCESS" category="User" style="">
+<![CDATA[============>Interboro Insurance Company]]><br/>
+</message>
+<message time="2014/12/01 15:09:12.923" level="SUCCESS" category="User" style="">
+<![CDATA[============>Occidental Fire and Casualty Co of NC]]><br/>
+</message>
+<message time="2014/12/01 15:09:13.088" level="SUCCESS" category="User" style="">
+<![CDATA[Selected 'Occidental Fire and Casualty Co of NC' under Policy carrier dropdown]]><br/>
+</message>
+<message time="2014/12/01 15:09:24.158" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Product dropdown' Field]]><br/>
+</message>
+<message time="2014/12/01 15:09:27.313" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'HO3 AK' product option]]><br/>
+</message>
+<message time="2014/12/01 15:10:13.575" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on 'Effective Date' Button]]><br/>
+</message>
+<message time="2014/12/01 15:10:17.157" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on Effective Date]]><br/>
+</message>
+<message time="2014/12/01 15:10:18.206" level="INFO" category="User" style="">
+<i>Signing out</i></message>
+<message time="2014/12/01 15:10:19.611" level="SUCCESS" category="User" style="">
+<![CDATA[Clicked on sign out link]]><br/>
+</message>
+<message time="2014/12/01 15:10:22.021" level="SUCCESS" category="User" style="">
+<![CDATA[Sign out successful]]><br/>
+</message>
+</log>

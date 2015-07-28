@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\obj\Debug\RanorexTestFramework.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\obj\Debug\RanorexTestFramework.csproj.ResolveComReference.cache
+C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\obj\Debug\RanorexTestFramework.Properties.Resources.resources
+C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\obj\Debug\RanorexTestFramework.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\RanorexFramework\RanorexTestFramework\bin\Debug\RanorexTestFramework.xml
